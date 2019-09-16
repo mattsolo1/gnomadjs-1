@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { withSize } from 'react-sizeme'
 import styled from 'styled-components'
 
@@ -9,14 +10,15 @@ const Wrapper = styled.div`
   width: 100%;
 `
 
-const GeneResultsQQPlot = withSize()(({ results, size: { width }, ...otherProps }) => {
+const GeneResultsQQPlot = withSize()(({ results, height, size: { width }, ...otherProps }) => {
   const dataPoints = results.filter(r => r.pval)
+  conosle.log(height)
   return (
     <Wrapper>
       {!!width && (
         <QQPlot
           {...otherProps}
-          height={500}
+          height={height}
           width={width}
           dataPoints={dataPoints}
           pointLabel={d => d.gene_name || d.gene_id}
@@ -25,5 +27,15 @@ const GeneResultsQQPlot = withSize()(({ results, size: { width }, ...otherProps 
     </Wrapper>
   )
 })
+GeneResultsQQPlot.propTypes = {
+  results: PropTypes.arrayOf(PropTypes.object).isRequired,
+  height: PropTypes.number,
+  size: PropTypes.shape({
+    width: PropTypes.number.isRequired,
+  }),
+}
+GeneResultsQQPlot.defaultProps = {
+  height: 500,
+}
 
 export default GeneResultsQQPlot

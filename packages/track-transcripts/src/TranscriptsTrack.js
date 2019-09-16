@@ -221,7 +221,7 @@ export const TranscriptsTrack = ({
                 />
               </ActiveTranscriptPlotWrapper>
 
-              {isExpanded && (
+            {/*isExpanded && (
                 <ControlPanel>
                   <Button
                     onClick={() =>
@@ -231,7 +231,7 @@ export const TranscriptsTrack = ({
                     Save plot
                   </Button>
                 </ControlPanel>
-              )}
+              )*/}
             </React.Fragment>
           )}
         </Track>
