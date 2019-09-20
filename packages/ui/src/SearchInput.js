@@ -6,7 +6,7 @@ const Wrapper = styled.span`
   position: relative;
   display: inline-block;
   border-bottom: 1px solid #000;
-  font-size: 14px;
+  font-size: 12px;
 `
 
 const Input = styled.input`

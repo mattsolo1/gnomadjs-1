@@ -99,7 +99,7 @@ export const QQPlot = ({
     ctx.strokeStyle = '#333'
     ctx.stroke()
 
-    ctx.font = '14px sans-serif'
+    ctx.font = '12px sans-serif'
     const { width: yLabelWidth } = ctx.measureText(yLabel)
     ctx.rotate(-Math.PI / 2)
     ctx.fillText(yLabel, -(h + yLabelWidth) / 2, -40)
@@ -136,7 +136,7 @@ export const QQPlot = ({
     ctx.strokeStyle = '#333'
     ctx.stroke()
 
-    ctx.font = '14px sans-serif'
+    ctx.font = '12px sans-serif'
     const { width: xLabelWidth } = ctx.measureText(xLabel)
     ctx.fillText(xLabel, (w - xLabelWidth) / 2, 50)
 

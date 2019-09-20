@@ -7,8 +7,8 @@ export const Page = styled.div`
   width: 100%;
   max-width: 1200px;
   padding: 0 15px;
-  margin: 0 auto 40px;
-  font-size: 14px;
+  margin: 0 auto 0;
+  font-size: 12px;
 `
 
 const PageHeadingWrapper = styled.div`
@@ -18,7 +18,7 @@ const PageHeadingWrapper = styled.div`
   padding-bottom: 0.5em;
   border-bottom: 1px solid #ccc;
   margin: 0.67em 0;
-  font-size: 14px;
+  font-size: 12px;
 
   @media (max-width: 900px) {
     flex-direction: column;

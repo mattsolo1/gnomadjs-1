@@ -102,7 +102,7 @@ const Label = styled.label`
   align-items: center;
   background: ${background};
   background-repeat: no-repeat;
-  font-size: 14px;
+  font-size: 12px;
   user-select: none;
 `
 

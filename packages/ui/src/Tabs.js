@@ -42,7 +42,7 @@ const StyledTabPanel = styled(TabPanel)`
 `
 
 export const Tabs = ({ tabs }) => (
-  <Wrapper>
+  <Wrapper style={{ width: '100%' }}>
     <TabList>
       <TabListWrapper>
         {tabs.map(tab => {
