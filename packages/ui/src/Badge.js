@@ -28,16 +28,27 @@ const BadgeWrapper = styled.span`
   padding: 0.25em 0.4em;
   border: 1px solid #000;
   border-radius: 0.3em;
-  background: ${props => BADGE_COLOR[props.level]};
+
+  background: ${props => {
+    if (props.color) {
+      return props.color
+    }
+    return BADGE_COLOR[props.level]
+  }};
+
   color: ${props => (props.level === 'warning' ? '#000' : '#fff')};
   font-size: 0.75em;
   font-weight: bold;
+  margin-left: 3px;
+  margin-bottom: 3px;
 `
 
-export const Badge = ({ children, level, tooltip }) =>
+export const Badge = ({ children, level, tooltip, color }) =>
   tooltip ? (
     <TooltipAnchor text={tooltip} tooltipComponent={TextTooltip}>
-      <BadgeWrapper level={level}>{children}</BadgeWrapper>
+      <BadgeWrapper level={level} color={color}>
+        {children}
+      </BadgeWrapper>
     </TooltipAnchor>
   ) : (
     <BadgeWrapper level={level}>{children}</BadgeWrapper>
@@ -47,9 +58,11 @@ Badge.propTypes = {
   children: PropTypes.string.isRequired,
   level: PropTypes.oneOf(['error', 'info', 'success', 'warning']),
   tooltip: PropTypes.string,
+  color: PropTypes.String,
 }
 
 Badge.defaultProps = {
   level: 'info',
   tooltip: undefined,
+  color: undefined,
 }
